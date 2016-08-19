@@ -4,9 +4,32 @@
 	<title>Todo App</title>
 	<meta charset='utf-8'>
 	<meta name='viewport' content='width=device-width'>
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400" rel="stylesheet">
 </head>
 <body>
-	<h1>Works</h1>
+	
+	<div class="container">
+		<header class="heading">
+			<h1 class='heading__title'>ADD NEW TODO</h1>
+			<button class="heading__btn">Add</button>
+			<input type="text" name="newTodo" placeholder='My new todo' class="heading__input-text">
+		</header>
+
+		<main>
+			<section class='todos'>
+				<ul class="todos__list">
+					<li class="todos__list-item">
+						Make a dinner <button></button>
+					</li>
+					<li class="todos__list-item">Do the vacuumng</li>
+					<li class="todos__list-item">Do the homework</li>
+					<li class="todos__list-item">Jogging</li>
+					<li class="todos__list-item">Meet friends</li>
+				</ul>
+			</section>
+		</main>
+	</div>
+
 	<script src='bundle.js'></script>
 </body>
 </html>
