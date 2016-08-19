@@ -4,14 +4,18 @@
 	<title>Todo App</title>
 	<meta charset='utf-8'>
 	<meta name='viewport' content='width=device-width'>
-	<link href="https://fonts.googleapis.com/css?family=Lato:300,400" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="fontello/css/fontello.css">
 </head>
 <body>
 	
 	<div class="container">
 		<header class="heading">
 			<h1 class='heading__title'>ADD NEW TODO</h1>
-			<button class="heading__btn">Add</button>
+			<button class="heading__btn">
+				Add
+				<i class="icon-plus"></i>
+			</button>
 			<input type="text" name="newTodo" placeholder='My new todo' class="heading__input-text">
 		</header>
 
@@ -19,12 +23,30 @@
 			<section class='todos'>
 				<ul class="todos__list">
 					<li class="todos__list-item">
-						Make a dinner <button></button>
+						Make a dinner 
+						<button class="btn-checker"><i class="icon-trash-empty"></i></button>
+						<button class="btn-checker"><i class="icon-check-empty"></i></button>
 					</li>
-					<li class="todos__list-item">Do the vacuumng</li>
-					<li class="todos__list-item">Do the homework</li>
-					<li class="todos__list-item">Jogging</li>
-					<li class="todos__list-item">Meet friends</li>
+					<li class="todos__list-item">	
+						Do the vacuumng 
+						<button class="btn-checker"><i class="icon-trash-empty"></i></button>
+						<button class="btn-checker"><i class="icon-check-empty"></i></button>
+					</li>
+					<li class="todos__list-item">
+						Do the homework 
+						<button class="btn-checker"><i class="icon-trash-empty"></i></button>
+						<button class="btn-checker"><i class="icon-check-empty"></i></button>
+					</li>
+					<li class="todos__list-item">
+						Jogging 
+						<button class="btn-checker"><i class="icon-trash-empty"></i></button>
+						<button class="btn-checker"><i class="icon-check-empty"></i></button>
+					</li>
+					<li class="todos__list-item">
+						Meet friends 
+						<button class="btn-checker"><i class="icon-trash-empty"></i></button>
+						<button class="btn-checker"><i class="icon-check-empty"></i></button>
+					</li>
 				</ul>
 			</section>
 		</main>
