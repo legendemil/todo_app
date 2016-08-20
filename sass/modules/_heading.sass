@@ -2,33 +2,59 @@
 	border:
 		top-left-radius: 10px
 		top-right-radius: 10px
-	background: #0080FF
-	color: #FFFFFF
-	padding: 2rem
+	background: $blue
+	color: $white
+	padding: 2.5rem
+	padding-bottom: 0
 	&__title
 		margin: 0
 		display: inline-block
+		font:
+			size: 1.5rem
+			weight: bold
 	&__btn
-		background-color: #FFC952
-		text-transform: uppercase
-		color: #FFFFFF
+		background-color: $blue--dark
+		color: $white
 		border: none
 			radius: 3px
-		padding: .5rem .7rem
-		font-size: .9rem
-		font-weight: 700
+		padding: .7rem 1rem
+		font-size: .8rem
+		font-weight: bold
 		float: right
 	&__input-text
 		display: block
 		width: 100%
-		color: #FFFFFF
-		padding: .9rem
-		margin-top: 1rem
-		font-size: 1rem
+		color: $white
+		padding-bottom: .5rem
+		margin-top: 3rem
+		line-height: 150%
+		letter-spacing: 1px
+		font:
+			size: 1.3rem
+			weight: light
 		background: none
 		border: none
-		border-bottom: 2px solid #FFFFFF
+		border-bottom: 2px solid $white
 		&:focus
 			outline: none
 		&::-webkit-input-placeholder
-			color: #FFFFFF
+			color: $white
+			font:
+				weight: 300
+
+
+.radio-box
+	padding: 1.5rem 0
+	display: flex
+	justify-content: space-between
+	&__radio
+		cursor: pointer
+		&:after
+			content: ''
+			display: block
+			width: 20px
+			height: 20px
+			background: $gray--light
+			border-radius: 5px
+			transform: translateY(-2px)
+

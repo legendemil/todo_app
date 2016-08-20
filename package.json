@@ -6,6 +6,8 @@
   "main": "main.js",
   "dependencies": {
     "css-loader": "^0.23.1",
+    "pouchdb": "^5.4.5",
+    "pubsub-js": "^1.5.3",
     "style-loader": "^0.13.1",
     "webpack": "^1.13.2"
   },

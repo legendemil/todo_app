@@ -16,7 +16,11 @@ module.exports = {
 			    test: /\.sass$/,
 			    exclude: /node_modules/,
 			    loader: 'style!css!sass'
-			}
+			}, {
+                test: /\.(jpg|png|gif)$/,
+                include: /img/,
+                loader: 'url'
+            }
         ],
     }
 };

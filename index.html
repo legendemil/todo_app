@@ -11,12 +11,30 @@
 	
 	<div class="container">
 		<header class="heading">
-			<h1 class='heading__title'>ADD NEW TODO</h1>
+			<h1 class='heading__title'>Add new Todo</h1>
 			<button class="heading__btn">
 				Add
 				<i class="icon-plus"></i>
 			</button>
 			<input type="text" name="newTodo" placeholder='My new todo' class="heading__input-text">
+			<div class='radio-box'>
+				<label for="priority" class='radio-box__title'>Priority:</label>
+				<label class='radio-box__radio-label'>
+					Low
+					<input type="radio" name='priority' value='1' class='radio-box__radio'>
+				</label>
+				
+				<label class='radio-box__radio-label'>
+					Normal
+					<input type="radio" name='priority' value='2' class='radio-box__radio' checked>
+				</label>
+				
+				<label class='radio-box__radio-label'>
+					High
+					<input type="radio" name='priority' value='3' class='radio-box__radio'>
+				</label>
+				
+			</div>
 		</header>
 
 		<main>
@@ -28,22 +46,7 @@
 						<button class="btn-checker"><i class="icon-check-empty"></i></button>
 					</li>
 					<li class="todos__list-item">	
-						Do the vacuumng 
-						<button class="btn-checker"><i class="icon-trash-empty"></i></button>
-						<button class="btn-checker"><i class="icon-check-empty"></i></button>
-					</li>
-					<li class="todos__list-item">
-						Do the homework 
-						<button class="btn-checker"><i class="icon-trash-empty"></i></button>
-						<button class="btn-checker"><i class="icon-check-empty"></i></button>
-					</li>
-					<li class="todos__list-item">
-						Jogging 
-						<button class="btn-checker"><i class="icon-trash-empty"></i></button>
-						<button class="btn-checker"><i class="icon-check-empty"></i></button>
-					</li>
-					<li class="todos__list-item">
-						Meet friends 
+						Do the vacuumng <span class='todos__list-item'>Normal</span>
 						<button class="btn-checker"><i class="icon-trash-empty"></i></button>
 						<button class="btn-checker"><i class="icon-check-empty"></i></button>
 					</li>
