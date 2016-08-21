@@ -1,6 +1,5 @@
-let PouchDB = require('pouchdb'), 
-	todosDB = todosDB || new PouchDB('todos')
-	;
+// import { todosDb } from './todosDB.js';
+let todosDB = require('./todosDB.js');
 
 export class Todo {
 	constructor(_id, task, priority, is_done = false) {
@@ -11,11 +10,13 @@ export class Todo {
 	}
 
 	add() {
-		return todosDB.put({
+		let todo = {
+			_id: this._id,
 			task: this.task,
 			priority: this.priority,
 			is_done: this.is_done
-		}, this._id).then( () => alert('added'));
+		}
+		todosDB.addTodo(todo);
 	}
 
 	update() {
