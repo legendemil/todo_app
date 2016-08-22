@@ -25,24 +25,61 @@ export class TodoList {
 	render() {
 		let todos = this.todos;
 		let output = document.createDocumentFragment(),
-			li = null,
-			liTodoText = null,
-			trashBtn = null,
-			checkBtn = null;
+			li = null;
 
 		for(let todo of todos) {
 			todo = todo.doc;
-			trashBtn = DOM.createElement('button', classes = ['btn-checker'], childs = [
-				DOM.createElement('i', classes = ['icon-trash-empty'])
-			]);
-			checkBtn = DOM.createElement('button', classes = ['btn-checker'], childs = [
-				DOM.createElement('i', classes = ['icon-check-empty'])
-			]);
-			li = DOM.createElement('li', todo.task, this.selector + '-item', childs = [ trashBtn, checkBtn]);
-
+			li = this.createSingleItem(todo);
 			output.appendChild(li);
 		}
 		this.element.appendChild(output);
 		console.log('rendering');
+	}
+
+
+	_mapPriority(priority) {
+		let label;
+		switch(priority) {
+			case 1:
+				label = 'Low';
+				break;
+			case 2:
+				label = 'Normal';
+				break;
+			case 3:
+				label = 'High';
+				break;
+			default:
+				label = 'Normal';
+			return label;
+		}
+	}
+
+
+	createSingleItem(todo) {
+		let li = null,
+			liTodoText = null,
+			trashBtn = null,
+			checkBtn = null,
+			priotityLabel = null;
+
+		priotityLabel = DOM.createElement('sup', {
+				text: this._mapPriority(todo.priority)
+			});
+		trashBtn = DOM.createElement('button',{
+			classes: ['btn-checker'],
+			childs: [DOM.createElement('i', { classes: ['icon-trash-empty'] })]
+		});
+		checkBtn = DOM.createElement('button', {
+			classes: ['btn-checker'],
+			childs: [DOM.createElement('i', { classes: ['icon-check-empty'] })]
+		});
+		li = DOM.createElement('li', {
+			text: todo.task,
+			classes: [this.selector + '-item'],
+			childs: [priotityLabel, trashBtn, checkBtn]
+		});
+
+		return li;
 	}
 }
