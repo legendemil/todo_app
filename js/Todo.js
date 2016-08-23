@@ -1,4 +1,3 @@
-// import { todosDb } from './todosDB.js';
 let todosDB = require('./todosDB.js');
 
 export class Todo {

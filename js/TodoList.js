@@ -50,9 +50,9 @@ export class TodoList {
 				label = 'High';
 				break;
 			default:
-				label = 'Normal';
-			return label;
+				label = 'Normal';		
 		}
+		return label;
 	}
 
 
@@ -62,7 +62,7 @@ export class TodoList {
 			trashBtn = null,
 			checkBtn = null,
 			priotityLabel = null;
-
+		
 		priotityLabel = DOM.createElement('sup', {
 				text: this._mapPriority(todo.priority)
 			});

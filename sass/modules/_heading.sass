@@ -50,6 +50,7 @@
 	&__radio
 		cursor: pointer
 		&:after
+			transition: .3s
 			content: ''
 			display: block
 			width: 20px
@@ -57,4 +58,9 @@
 			background: $gray--light
 			border-radius: 5px
 			transform: translateY(-2px)
+		&--checked
+			&:after
+				background-color: $green
+				border-radius: 50%
+
 
