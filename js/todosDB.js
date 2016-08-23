@@ -10,7 +10,15 @@ todosDB.addTodo = function(todo) {
 			task: todo.task,
 			priority: todo.priority,
 			is_done: todo.is_done
-		}).then( () => pubSub.publish('ADD_TODO', todo));
+		}).then( (res) => {
+			todo._res = res;
+			pubSub.publish('ADD_TODO', todo);
+		});
+}
+
+todosDB.removeTodo = function(_id, _rev) {
+	console.log('removing', _id, _rev);
+	return this.db.remove(_id, _rev);
 }
 
 

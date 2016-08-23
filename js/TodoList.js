@@ -15,7 +15,6 @@ export class TodoList {
 	update(msg, todo) {
 		let li = this.createSingleItem(todo);
 		DOM.prependChild(this.element, li);
-		// this.element.appendChild(li);
 	}
 
 	getTodos() {
@@ -59,6 +58,14 @@ export class TodoList {
 		return label;
 	}
 
+	removeSingleItem(ev) {
+		let li = ev.target.parentNode,
+			_id = li.getAttribute('data-id'),
+			_rev = li.getAttribute('data-rev');
+		todosDB.removeTodo(_id, _rev);
+		li.parentNode.removeChild(li);
+	}
+
 
 	createSingleItem(todo) {
 		let li = null,
@@ -83,6 +90,10 @@ export class TodoList {
 			classes: [this.selector + '-item'],
 			childs: [priotityLabel, trashBtn, checkBtn]
 		});
+
+		li.setAttribute('data-id', todo._id);
+		li.setAttribute('data-rev', todo._rev);
+		trashBtn.addEventListener('click', this.removeSingleItem);
 
 		return li;
 	}
