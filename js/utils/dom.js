@@ -28,4 +28,12 @@ Utils.dom.createElement = function(type, options) {
 	return el;
 }
 
+Utils.dom.prependChild = function(parent, child) {
+	if(!parent.childNodes) {
+		parent.appendChild(child);
+	}
+
+	parent.insertBefore(child, parent.firstChild);
+};
+
 module.exports = Utils.dom;

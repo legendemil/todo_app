@@ -1,6 +1,7 @@
 import { Todo } from './Todo.js';
 let todosDB = require('./todosDB.js'),
-	DOM = require('./utils/dom.js');
+	DOM = require('./utils/dom.js'),
+	pubSub = require('pubsub-js');
 
 
 export class TodoList {
@@ -8,10 +9,13 @@ export class TodoList {
 		this.selector = 'todos__list';
 		this.todos = [];
 		this.element = document.querySelector('.' + this.selector);
+		pubSub.subscribe('ADD_TODO', this.update.bind(this));
 	}
 
-	update() {
-		
+	update(msg, todo) {
+		let li = this.createSingleItem(todo);
+		DOM.prependChild(this.element, li);
+		// this.element.appendChild(li);
 	}
 
 	getTodos() {
@@ -62,7 +66,7 @@ export class TodoList {
 			trashBtn = null,
 			checkBtn = null,
 			priotityLabel = null;
-		
+
 		priotityLabel = DOM.createElement('sup', {
 				text: this._mapPriority(todo.priority)
 			});

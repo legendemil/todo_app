@@ -5,12 +5,16 @@ module.exports = (function() {
 		taskInp = document.querySelector('.heading__input-text'),
 		priorityInp = document.querySelectorAll('input[name="priority"]'),
 		choosedPriority = priorityInp[1];
-
+	
+	// bind events
 	addBtn.addEventListener('click', addNewTodo, false);
 	bindRadioEvents();
 
-	console.log(priorityInp)
 	function addNewTodo() {
+		if(!taskInp.value) {
+			alert("You don't type a todo");
+			return false;
+		}
 		let todo = new Todo(
 			new Date().toISOString(),
 			taskInp.value,

@@ -1,5 +1,6 @@
 let PouchDB = require('pouchdb'), 
-	todosDB = todosDB || { };
+	todosDB = todosDB || { },
+	pubSub = require('pubsub-js');
 
 todosDB.db =  new PouchDB('todos');
 
@@ -9,7 +10,7 @@ todosDB.addTodo = function(todo) {
 			task: todo.task,
 			priority: todo.priority,
 			is_done: todo.is_done
-		}).then( () => console.log('added'));
+		}).then( () => pubSub.publish('ADD_TODO', todo));
 }
 
 
