@@ -11,7 +11,7 @@ todosDB.addTodo = function(todo) {
 			priority: todo.priority,
 			is_done: todo.is_done
 		}).then( (res) => {
-			todo._res = res;
+			todo._rev = res.rev;
 			pubSub.publish('ADD_TODO', todo);
 		});
 }
