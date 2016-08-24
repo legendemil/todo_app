@@ -10,6 +10,16 @@ module.exports = (function() {
 	addBtn.addEventListener('click', addNewTodo, false);
 	bindRadioEvents();
 
+
+	function clearInputs() {
+		taskInp.value = '';
+		choosedPriority.classList.remove('radio-box__radio--checked');
+		priorityInp[1].checked = true;
+		priorityInp[1].classList.add('radio-box__radio--checked');	
+		choosedPriority = priorityInp[1];
+		console.log(priorityInp);
+	}
+
 	function addNewTodo() {
 		if(!taskInp.value) {
 			alert("You don't type a todo");
@@ -20,6 +30,7 @@ module.exports = (function() {
 			taskInp.value,
 			choosedPriority.value);
 		todo.add();
+		clearInputs();
 	}
 
 	function radioBtnChange(ev) {
