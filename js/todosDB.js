@@ -8,6 +8,7 @@ todosDB.db =  new PouchDB('todos');
 todosDB.addTodo = function(todo) {
 	return this.db.put({
 			_id: todo._id,
+			title: todo.title,
 			task: todo.task,
 			priority: todo.priority,
 			is_done: todo.is_done

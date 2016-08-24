@@ -89,7 +89,7 @@ export class TodoList {
 			childs: [DOM.createElement('i', { classes: checkBtnClass })]
 		});
 		li = DOM.createElement('li', {
-			text: todo.task,
+			text: todo.title,
 			classes: [this.selector + '-item'],
 			childs: [priotityLabel, trashBtn, checkBtn]
 		});

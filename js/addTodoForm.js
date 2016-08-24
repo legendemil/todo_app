@@ -2,7 +2,8 @@ import { Todo } from './Todo.js';
 
 module.exports = (function() {
 	let addBtn = document.querySelector('.heading__btn'),
-		taskInp = document.querySelector('.heading__input-text'),
+		titleInp = document.querySelector('.heading__input-text'),
+		taskInp = document.querySelector('.heading__textarea'),
 		priorityInp = document.querySelectorAll('input[name="priority"]'),
 		choosedPriority = priorityInp[1];
 	
@@ -21,12 +22,13 @@ module.exports = (function() {
 	}
 
 	function addNewTodo() {
-		if(!taskInp.value) {
+		if(!taskInp.value || !titleInp.value) {
 			alert("You don't type a todo");
 			return false;
 		}
 		let todo = new Todo(
 			new Date().toISOString(),
+			titleInp.value,
 			taskInp.value,
 			choosedPriority.value);
 		todo.add();
