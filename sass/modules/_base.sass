@@ -4,6 +4,9 @@ body, html
 	height: 100%
 	font-family: 'Lato', sans-serif
 body
+	padding:
+		top: 3rem
+		bottom: 3rem
 	margin: 0
 	background:
 		image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('../img/img1.jpg')
@@ -16,15 +19,14 @@ sup
 
 main 
 	padding: 2rem
-
+	
 
 .container
-	position: relative
-	top: 50%
-	left: 50%
-	transform: translate(-50%, -50%)
+	overflow: hidden
+	margin: 0 auto
 	max-width: 520px
-	min-height: 80%
+	min-height: 500px
+	height: 100%
 	background: $white
 	box-shadow: 3px 3px 66px rgba(0,0,0,0.90)
 	border-radius: 10px
@@ -41,3 +43,12 @@ main
 		font-size: 1.2rem
 		&.icon-trash-empty
 			color: #E71D36
+
+
+@media (max-width: 33em) 
+	html
+		font-size: 13px
+	.container
+		border-radius: 0
+	body
+		padding: 0
