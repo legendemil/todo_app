@@ -14,7 +14,7 @@ export class Todo {
 			_id: this._id,
 			task: this.task,
 			priority: Number(this.priority),
-			is_done: this.is_done
+			is_done: Boolean(this.is_done)
 		}
 		todosDB.addTodo(todo);
 	}

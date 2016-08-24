@@ -74,6 +74,7 @@ export class TodoList {
 			liTodoText = null,
 			trashBtn = null,
 			checkBtn = null,
+			checkBtnClass = todo.is_done ? ['icon-ok-circled'] : ['icon-check-empty'],
 			priotityLabel = null;
 
 		priotityLabel = DOM.createElement('sup', {
@@ -85,7 +86,7 @@ export class TodoList {
 		});
 		checkBtn = DOM.createElement('button', {
 			classes: ['btn-checker'],
-			childs: [DOM.createElement('i', { classes: ['icon-check-empty'] })]
+			childs: [DOM.createElement('i', { classes: checkBtnClass })]
 		});
 		li = DOM.createElement('li', {
 			text: todo.task,
@@ -95,8 +96,28 @@ export class TodoList {
 
 		li.setAttribute('data-id', todo._id);
 		li.setAttribute('data-rev', todo._rev);
-		trashBtn.addEventListener('click', this.removeSingleItem);
+		li.setAttribute('data-done', todo.is_done);
 
+		trashBtn.addEventListener('click', this.removeSingleItem);
+		checkBtn.addEventListener('click', this.markTodo);
 		return li;
+	}
+
+	markTodo(ev) {
+		let btn = ev.target,
+			icon = btn.querySelector('i'),
+			li = btn.parentNode,
+			is_done = (li.getAttribute('data-done') === 'false') ? true : false,
+			todo = {
+				_id: li.getAttribute('data-id'),
+				_rev: li.getAttribute('data-rev'),
+				is_done: is_done
+			};
+		console.log(is_done, !is_done, typeof is_done);
+		li.setAttribute('data-done', is_done);
+		icon.classList.toggle('icon-check-empty');
+		icon.classList.toggle('icon-ok-circled');
+
+		todosDB.update(todo);
 	}
 }
