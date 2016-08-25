@@ -14,7 +14,9 @@
   },
   "devDependencies": {},
   "scripts": {
-    "dev": "webpack-dev-server --content-base . --inline --hot"
+    "dev": "webpack-dev-server --content-base . --inline --hot",
+    "prod": "NODE_ENV=production webpack",
+    "styles": "sass --watch sass/main.sass:css/main.css --style compressed"
   },
   "repository": {
     "type": "git",

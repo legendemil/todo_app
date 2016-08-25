@@ -1,4 +1,3 @@
-require('./sass/main.sass');
 import { addTodoForm } from './js/addTodoForm.js';
 import { TodoList } from './js/TodoList.js';
 
