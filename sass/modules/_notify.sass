@@ -1,0 +1,47 @@
+.notify
+	display: none
+	position: fixed
+	top: 0
+	left: 0
+	color: $blue--dark
+	font-weight: 300
+	width: 300px
+	background: $white
+	margin: 0 auto
+	box-shadow: 3px 3px 66px rgba(0,0,0,0.90)
+	border-radius: 5px
+	&__header
+		padding: .5rem 1rem
+		border-bottom: 1px solid $blue--dark
+		h3
+			font-weight: 300
+			font-size: 1.5rem
+	&__body
+		padding: .5rem 1rem
+		text-align: center
+	&--alert
+		
+
+.show-popup
+	display: block 
+	animation:
+		name: show-popup
+		duration: .3s
+		fill-mode: forwards
+
+.hide-popup
+	animation:
+		name: hide-popup
+		duration: .3s
+		fill-mode: forwards
+
+@keyframes show-popup
+	0%
+		opacity: .1
+	100%
+		opacity: 1
+
+@keyframes hide-popup
+	0%
+	100%
+		opacity: .1s

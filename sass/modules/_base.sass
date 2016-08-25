@@ -2,7 +2,7 @@
 	box-sizing: border-box
 body, html
 	height: 100%
-	font-family: 'Lato', sans-serif
+	font-family: 'Open Sans', sans-serif;
 body
 	padding:
 		top: 3rem
@@ -11,11 +11,13 @@ body
 	background:
 		image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('../img/img1.jpg')
 		size: cover
+		attachment: fixed
 
 
 sup
 	font-size: .6rem
 	margin-left: .5rem
+	font-weight: 400
 
 main 
 	padding: 2rem
@@ -29,7 +31,7 @@ main
 	height: 100%
 	background: $white
 	box-shadow: 3px 3px 66px rgba(0,0,0,0.90)
-	border-radius: 10px
+	border-radius: 5px
 .btn-checker
 	float: right
 	background: none
@@ -44,6 +46,18 @@ main
 		&.icon-trash-empty
 			color: #E71D36
 
+
+.button
+	cursor: pointer
+	border: 1px solid $blue--dark
+	color: $blue--dark
+	background: none
+	font-size: 1rem
+	padding: .5rem 1rem
+	&--confirm
+		background-color: $blue--dark
+		color: $white
+	&--cancel
 
 @media (max-width: 33em) 
 	html

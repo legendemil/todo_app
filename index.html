@@ -4,7 +4,8 @@
 	<title>Todo App</title>
 	<meta charset='utf-8'>
 	<meta name='viewport' content='width=device-width'>
-	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+	<!-- <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet"> -->
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400&subset=latin-ext" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="fontello/css/fontello.css">
 </head>
 <body>
@@ -16,8 +17,8 @@
 				Add
 				<i class="icon-plus"></i>
 			</button>
-			<input type="text" name="newTodo-title" placeholder='Title' class="heading__input-text" maxlength="25">
-			<textarea name='newTodo' placeholder="My new Todo" class='heading__textarea'></textarea>
+			<input type="text" name="newTodo-title" placeholder='Title' class="heading__input-text" maxlength="25" required>
+			<textarea name='newTodo' placeholder="My new Todo" class='heading__textarea' required></textarea>
 			<!-- <input type="text" name="newTodo" placeholder='My new todo' class="heading__input-text"> -->
 			<div class='radio-box'>
 				<label for="priority" class='radio-box__title'>Priority:</label>
@@ -52,6 +53,24 @@
 		</main>
 	</div>
 
+	
+	<section class='notify notify--popup notify--popup-delete'>
+		<header class='notify__header'>
+			<h3>Deleting Todo</h3>
+		</header>
+		<div class='notify__body'>
+			<p>Do you really want to delete this todo?</p>
+			<button class='button button--confirm'>Yes</button>
+			<button class='button button--cancel'>No</button>
+		</div>	
+	</section>
+
+	<section class='notify notify--alert'>
+		<header class='notify__header'>
+			<h3>Oh, You didn't filled up all fields</h3>
+		</header>
+	</section>
+	
 	<script src='bundle.js'></script>
 </body>
 </html>
