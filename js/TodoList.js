@@ -100,6 +100,10 @@ export class TodoList {
 
 		trashBtn.addEventListener('click', this.removeSingleItem);
 		checkBtn.addEventListener('click', this.markTodo);
+		li.addEventListener('click', function(ev) {
+			ev.stopPropagation();
+			console.log(ev.target)
+		});
 		return li;
 	}
 
