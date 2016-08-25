@@ -18,12 +18,12 @@ sup
 	margin-left: .5rem
 
 main 
+	height: 50%
 	padding: 2rem
-	
 
 .container
 	overflow: hidden
-	margin: 0 auto
+	margin: auto auto
 	max-width: 520px
 	min-height: 500px
 	height: 100%
@@ -45,10 +45,18 @@ main
 			color: #E71D36
 
 
-@media (max-width: 33em) 
+@media (max-width: 48em) 
 	html
 		font-size: 13px
 	.container
+	.heading
 		border-radius: 0
 	body
 		padding: 0
+
+
+@media (min-height: 36em) and (max-width: 47.5em) 
+	.heading
+		max-height: 261px
+	main 
+		height: calc(100% - 261px)
