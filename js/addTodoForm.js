@@ -1,14 +1,14 @@
 import { Todo } from './Todo.js';
 
 module.exports = (function() {
-	let addBtn = document.querySelector('.heading__btn'),
+	let form = document.querySelector('.form-add-todo'),
 		titleInp = document.querySelector('.heading__input-text'),
 		taskInp = document.querySelector('.heading__textarea'),
 		priorityInp = document.querySelectorAll('input[name="priority"]'),
 		choosedPriority = priorityInp[1];
 	
 	// bind events
-	addBtn.addEventListener('click', addNewTodo, false);
+	form.addEventListener('submit', addNewTodo, false);
 	bindRadioEvents();
 
 
@@ -25,7 +25,8 @@ module.exports = (function() {
 		
 	}
 
-	function addNewTodo() {
+	function addNewTodo(ev) {
+		ev.preventDefault();
 		if(!taskInp.value || !titleInp.value) {
 			alert("You don't type a todo");
 			return false;
