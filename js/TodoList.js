@@ -65,7 +65,10 @@ export class TodoList {
 			_id = li.getAttribute('data-id'),
 			_rev = li.getAttribute('data-rev');
 		todosDB.removeTodo(_id, _rev);
-		li.parentNode.removeChild(li);
+		li.classList.add('remove-todo');
+		setTimeout(function() {
+			li.parentNode.removeChild(li);
+		},300);
 	}
 
 
