@@ -1,0 +1,83 @@
+/*
+Error: Invalid CSS after "...ns', sans-serif": expected expression (e.g. 1px, bold), was ";"
+        on line 5 of sass/modules/_base.sass
+        from line 3 of sass/main.sass
+
+1: *
+2: 	box-sizing: border-box
+3: body, html
+4: 	height: 100%
+5: 	font-family: 'Open Sans', sans-serif;
+6: body
+7: 	padding:
+8: 		top: 3rem
+9: 		bottom: 3rem
+10: 	margin: 0
+
+Backtrace:
+sass/modules/_base.sass:5
+sass/main.sass:3
+/home/emil/.rvm/gems/ruby-2.3.0/gems/sass-3.4.21/lib/sass/scss/parser.rb:1179:in `expected'
+/home/emil/.rvm/gems/ruby-2.3.0/gems/sass-3.4.21/lib/sass/script/lexer.rb:227:in `expected!'
+/home/emil/.rvm/gems/ruby-2.3.0/gems/sass-3.4.21/lib/sass/script/parser.rb:702:in `assert_done'
+/home/emil/.rvm/gems/ruby-2.3.0/gems/sass-3.4.21/lib/sass/script/parser.rb:64:in `parse'
+/home/emil/.rvm/gems/ruby-2.3.0/gems/sass-3.4.21/lib/sass/script/parser.rb:223:in `parse'
+/home/emil/.rvm/gems/ruby-2.3.0/gems/sass-3.4.21/lib/sass/script.rb:27:in `parse'
+/home/emil/.rvm/gems/ruby-2.3.0/gems/sass-3.4.21/lib/sass/engine.rb:1145:in `parse_script'
+/home/emil/.rvm/gems/ruby-2.3.0/gems/sass-3.4.21/lib/sass/engine.rb:718:in `parse_property'
+/home/emil/.rvm/gems/ruby-2.3.0/gems/sass-3.4.21/lib/sass/engine.rb:689:in `parse_property_or_rule'
+/home/emil/.rvm/gems/ruby-2.3.0/gems/sass-3.4.21/lib/sass/engine.rb:655:in `parse_line'
+/home/emil/.rvm/gems/ruby-2.3.0/gems/sass-3.4.21/lib/sass/engine.rb:533:in `build_tree'
+/home/emil/.rvm/gems/ruby-2.3.0/gems/sass-3.4.21/lib/sass/engine.rb:552:in `block in append_children'
+/home/emil/.rvm/gems/ruby-2.3.0/gems/sass-3.4.21/lib/sass/engine.rb:551:in `each'
+/home/emil/.rvm/gems/ruby-2.3.0/gems/sass-3.4.21/lib/sass/engine.rb:551:in `append_children'
+/home/emil/.rvm/gems/ruby-2.3.0/gems/sass-3.4.21/lib/sass/engine.rb:542:in `block in build_tree'
+/home/emil/.rvm/gems/ruby-2.3.0/gems/sass-3.4.21/lib/sass/engine.rb:535:in `each'
+/home/emil/.rvm/gems/ruby-2.3.0/gems/sass-3.4.21/lib/sass/engine.rb:535:in `build_tree'
+/home/emil/.rvm/gems/ruby-2.3.0/gems/sass-3.4.21/lib/sass/engine.rb:552:in `block in append_children'
+/home/emil/.rvm/gems/ruby-2.3.0/gems/sass-3.4.21/lib/sass/engine.rb:551:in `each'
+/home/emil/.rvm/gems/ruby-2.3.0/gems/sass-3.4.21/lib/sass/engine.rb:551:in `append_children'
+/home/emil/.rvm/gems/ruby-2.3.0/gems/sass-3.4.21/lib/sass/engine.rb:406:in `_to_tree'
+/home/emil/.rvm/gems/ruby-2.3.0/gems/sass-3.4.21/lib/sass/engine.rb:309:in `to_tree'
+/home/emil/.rvm/gems/ruby-2.3.0/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:324:in `block in visit_import'
+/home/emil/.rvm/gems/ruby-2.3.0/gems/sass-3.4.21/lib/sass/stack.rb:88:in `block in with_import'
+/home/emil/.rvm/gems/ruby-2.3.0/gems/sass-3.4.21/lib/sass/stack.rb:115:in `with_frame'
+/home/emil/.rvm/gems/ruby-2.3.0/gems/sass-3.4.21/lib/sass/stack.rb:88:in `with_import'
+/home/emil/.rvm/gems/ruby-2.3.0/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:323:in `visit_import'
+/home/emil/.rvm/gems/ruby-2.3.0/gems/sass-3.4.21/lib/sass/tree/visitors/base.rb:36:in `visit'
+/home/emil/.rvm/gems/ruby-2.3.0/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+/home/emil/.rvm/gems/ruby-2.3.0/gems/sass-3.4.21/lib/sass/stack.rb:79:in `block in with_base'
+/home/emil/.rvm/gems/ruby-2.3.0/gems/sass-3.4.21/lib/sass/stack.rb:115:in `with_frame'
+/home/emil/.rvm/gems/ruby-2.3.0/gems/sass-3.4.21/lib/sass/stack.rb:79:in `with_base'
+/home/emil/.rvm/gems/ruby-2.3.0/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:158:in `visit'
+/home/emil/.rvm/gems/ruby-2.3.0/gems/sass-3.4.21/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+/home/emil/.rvm/gems/ruby-2.3.0/gems/sass-3.4.21/lib/sass/tree/visitors/base.rb:52:in `map'
+/home/emil/.rvm/gems/ruby-2.3.0/gems/sass-3.4.21/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+/home/emil/.rvm/gems/ruby-2.3.0/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:167:in `block in visit_children'
+/home/emil/.rvm/gems/ruby-2.3.0/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+/home/emil/.rvm/gems/ruby-2.3.0/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:166:in `visit_children'
+/home/emil/.rvm/gems/ruby-2.3.0/gems/sass-3.4.21/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+/home/emil/.rvm/gems/ruby-2.3.0/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:186:in `visit_root'
+/home/emil/.rvm/gems/ruby-2.3.0/gems/sass-3.4.21/lib/sass/tree/visitors/base.rb:36:in `visit'
+/home/emil/.rvm/gems/ruby-2.3.0/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:157:in `visit'
+/home/emil/.rvm/gems/ruby-2.3.0/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:8:in `visit'
+/home/emil/.rvm/gems/ruby-2.3.0/gems/sass-3.4.21/lib/sass/tree/root_node.rb:36:in `css_tree'
+/home/emil/.rvm/gems/ruby-2.3.0/gems/sass-3.4.21/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
+/home/emil/.rvm/gems/ruby-2.3.0/gems/sass-3.4.21/lib/sass/engine.rb:378:in `_render_with_sourcemap'
+/home/emil/.rvm/gems/ruby-2.3.0/gems/sass-3.4.21/lib/sass/engine.rb:295:in `render_with_sourcemap'
+/home/emil/.rvm/gems/ruby-2.3.0/gems/sass-3.4.21/lib/sass/plugin/compiler.rb:490:in `update_stylesheet'
+/home/emil/.rvm/gems/ruby-2.3.0/gems/sass-3.4.21/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+/home/emil/.rvm/gems/ruby-2.3.0/gems/sass-3.4.21/lib/sass/plugin/compiler.rb:209:in `each'
+/home/emil/.rvm/gems/ruby-2.3.0/gems/sass-3.4.21/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+/home/emil/.rvm/gems/ruby-2.3.0/gems/sass-3.4.21/lib/sass/plugin/compiler.rb:471:in `on_file_changed'
+/home/emil/.rvm/gems/ruby-2.3.0/gems/sass-3.4.21/lib/sass/plugin/compiler.rb:328:in `block in watch'
+/home/emil/.rvm/gems/ruby-2.3.0/gems/sass-3.4.21/vendor/listen/lib/listen/listener.rb:252:in `on_change'
+/home/emil/.rvm/gems/ruby-2.3.0/gems/sass-3.4.21/vendor/listen/lib/listen/listener.rb:290:in `block in initialize_adapter'
+/home/emil/.rvm/gems/ruby-2.3.0/gems/sass-3.4.21/vendor/listen/lib/listen/adapter.rb:254:in `report_changes'
+/home/emil/.rvm/gems/ruby-2.3.0/gems/sass-3.4.21/vendor/listen/lib/listen/adapter.rb:323:in `poll_changed_directories'
+/home/emil/.rvm/gems/ruby-2.3.0/gems/sass-3.4.21/vendor/listen/lib/listen/adapter.rb:299:in `block in start_poller'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Invalid CSS after \"...ns', sans-serif\": expected expression (e.g. 1px, bold), was \";\"\A         on line 5 of sass/modules/_base.sass\A         from line 3 of sass/main.sass\A \A 1: *\A 2: 	box-sizing: border-box\A 3: body, html\A 4: 	height: 100%\A 5: 	font-family: 'Open Sans', sans-serif;\A 6: body\A 7: 	padding:\A 8: 		top: 3rem\A 9: 		bottom: 3rem\A 10: 	margin: 0"; }

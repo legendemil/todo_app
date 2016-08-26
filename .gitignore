@@ -2,6 +2,6 @@
 logs
 *.log
 npm-debug.log*
-
+.sass-cache
 # Dependency directories
 node_modules
