@@ -1,4 +1,5 @@
-import { addTodoForm } from './js/addTodoForm.js';
+// initialize adding todos form
+let addTodoForm = require('./js/addTodoForm.js');
 import { TodoList } from './js/TodoList.js';
 
 (function() {
@@ -6,7 +7,6 @@ import { TodoList } from './js/TodoList.js';
 		let todosDB = todosDB || new PouchDB('todos'),
 		todosList = new TodoList();
 		todosList.getTodos();
-
 })();
 
 

@@ -1,5 +1,7 @@
 let DOM = DOM || require('./utils/dom.js');
 
+
+
 module.exports = (function() {
 	let notify = {};
 
