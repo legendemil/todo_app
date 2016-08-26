@@ -1,7 +1,8 @@
 import { Todo } from './Todo.js';
 let todosDB = require('./todosDB.js'),
 	DOM = require('./utils/dom.js'),
-	pubSub = require('pubsub-js');
+	pubSub = require('pubsub-js'),
+	notify = require('./notify.js');
 
 
 export class TodoList {
@@ -59,16 +60,17 @@ export class TodoList {
 	}
 
 	removeSingleItem(ev) {
-		if(!confirm('Do you want to remove todo?'))
-			return false;
-		let li = ev.target.parentNode,
-			_id = li.getAttribute('data-id'),
-			_rev = li.getAttribute('data-rev');
-		todosDB.removeTodo(_id, _rev);
-		li.classList.add('remove-todo');
-		setTimeout(function() {
-			li.parentNode.removeChild(li);
-		},300);
+		notify.deleteAlert(() => {
+			// if user click yes, then delete todo
+			let li = ev.target.parentNode,
+				_id = li.getAttribute('data-id'),
+				_rev = li.getAttribute('data-rev');
+			todosDB.removeTodo(_id, _rev);
+			li.classList.add('remove-todo');
+			setTimeout(function() {
+				li.parentNode.removeChild(li);
+			},300);
+		});	
 	}
 
 
