@@ -2,7 +2,7 @@ import { Todo } from './Todo.js';
 let todosDB = require('./todosDB.js'),
 	DOM = require('./utils/dom.js'),
 	pubSub = require('pubsub-js'),
-	notify = require('./notify.js');
+	deleteAlert = require('./notify.js').deleteAlert;
 
 
 export class TodoList {
@@ -60,7 +60,7 @@ export class TodoList {
 	}
 
 	removeSingleItem(ev) {
-		notify.deleteAlert(() => {
+		deleteAlert(() => {
 			// if user click yes, then delete todo
 			let li = ev.target.parentNode,
 				_id = li.getAttribute('data-id'),

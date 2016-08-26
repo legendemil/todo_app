@@ -1,4 +1,5 @@
 import { Todo } from './Todo.js';
+let infoMsg = require('./notify.js').infoMsg;
 
 module.exports = (function() {
 	let form = document.querySelector('.form-add-todo'),
@@ -28,7 +29,7 @@ module.exports = (function() {
 	function addNewTodo(ev) {
 		ev.preventDefault();
 		if(!taskInp.value || !titleInp.value) {
-			alert("You don't type a todo");
+			infoMsg();
 			return false;
 		}
 		let todo = new Todo(

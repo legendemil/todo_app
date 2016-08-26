@@ -24,7 +24,18 @@ module.exports = (function() {
 			deleteMsg.removeEventListener('click', deleteTodoItem);		
 		});
 	};
-
+	
+	notify.infoMsg = function() {
+		let alertMsg = document.querySelector('.notify--alert');
+		alertMsg.classList.add('show-popup');
+		setTimeout(() => {
+			alertMsg.classList.remove('show-popup');
+			alertMsg.classList.add('hide-popup');
+			setTimeout(() => {
+				alertMsg.classList.remove('hide-popup');
+			}, 300);
+		}, 1800);
+	}
 
 	return notify;
 })();
