@@ -24,11 +24,10 @@ todosDB.update = function(todo) {
 				doc[prop] = todo[prop];
 			}
 			return doc;
-		}).then( res => console.log('updated', res) );
+		});
 }
 
 todosDB.removeTodo = function(_id, _rev) {
-	console.log('removing', _id, _rev);
 	return this.db.remove(_id, _rev);
 }
 

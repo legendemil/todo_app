@@ -1,8 +1,10 @@
 import { Todo } from './Todo.js';
 let todosDB = require('./todosDB.js'),
 	DOM = require('./utils/dom.js'),
+	mapPriority = require('./utils/general.js').mapPriority,
 	pubSub = require('pubsub-js'),
-	deleteAlert = require('./notify.js').deleteAlert;
+	deleteAlert = require('./notify.js').deleteAlert,
+	detailsMsg = require('./notify.js').detailsMsg;
 
 
 export class TodoList {
@@ -21,7 +23,6 @@ export class TodoList {
 	getTodos() {
 		todosDB.getAll().then( res => {
 			this.todos = res.rows;
-			console.log('from db:', this.todos);
 			this.render();
 		});
 	}
@@ -37,29 +38,10 @@ export class TodoList {
 			output.appendChild(li);
 		}
 		this.element.appendChild(output);
-		console.log('rendering');
-	}
-
-
-	_mapPriority(priority) {
-		let label;
-		switch(priority) {
-			case 1:
-				label = 'Low';
-				break;
-			case 2:
-				label = 'Normal';
-				break;
-			case 3:
-				label = 'High';
-				break;
-			default:
-				label = 'Normal';		
-		}
-		return label;
 	}
 
 	removeSingleItem(ev) {
+		ev.stopPropagation();
 		deleteAlert(() => {
 			// if user click yes, then delete todo
 			let li = ev.target.parentNode,
@@ -83,7 +65,7 @@ export class TodoList {
 			priotityLabel = null;
 
 		priotityLabel = DOM.createElement('sup', {
-				text: this._mapPriority(todo.priority)
+				text: mapPriority(todo.priority)
 			});
 		trashBtn = DOM.createElement('button',{
 			classes: ['btn-checker'],
@@ -105,14 +87,22 @@ export class TodoList {
 
 		trashBtn.addEventListener('click', this.removeSingleItem);
 		checkBtn.addEventListener('click', this.markTodo);
-		li.addEventListener('click', function(ev) {
-			ev.stopPropagation();
-			console.log(ev.target)
-		});
+		li.addEventListener('click', this.showDetails);
 		return li;
 	}
 
+	showDetails(ev) {
+		let li = ev.currentTarget,
+			todo = null;	
+		todosDB.getSingleTodo(li.getAttribute('data-id'))
+			.then( res => {
+				detailsMsg(res);
+			});
+		
+	}
+
 	markTodo(ev) {
+		ev.stopPropagation();
 		let btn = ev.target,
 			icon = btn.querySelector('i'),
 			li = btn.parentNode,
@@ -122,7 +112,6 @@ export class TodoList {
 				_rev: li.getAttribute('data-rev'),
 				is_done: is_done
 			};
-		console.log(is_done, !is_done, typeof is_done);
 		li.setAttribute('data-done', is_done);
 		icon.classList.toggle('icon-check-empty');
 		icon.classList.toggle('icon-ok-circled');

@@ -21,11 +21,4 @@ export class Todo {
 		todosDB.addTodo(todo);
 	}
 	
-	update() {
-
-	}
-
-	remove() {
-
-	}
 }
